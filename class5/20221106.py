@@ -46,7 +46,6 @@ button2.pack(side="left",fill="y",ipadx=30)
 button3.pack(side="left")
 button4.pack(side="right")
 button5.pack()
-#Hello my name is halston, i have call of duty warzone, Morden Warfare 2 2022, Vangaurd, i need to download Apex Legend, because its fun :D
 
 
 
