@@ -10,10 +10,10 @@ addbutton=Button(root,text="+")
 minusbutton=Button(root,text='-')
 
 
-storename.grid(row=0,column=1)
-productName.grid(row=1,column=0)
-productPrice.grid(row=2,column=0,sticky=W+E)
-addbutton.grid(row=3,column=0)
+storename.grid(row=0,column=0,columnspan=4,sticky=W+S+N+E)
+productName.grid(row=1,column=0,columnspan=2,sticky=W)
+productPrice.grid(row=2,column=0,sticky=W)
+addbutton.grid(row=3,column=0,sticky=W)
 productNum.grid(row=3,column=1,sticky=W)
 minusbutton.grid(row=3,column=2,sticky=W)
 

@@ -78,21 +78,35 @@ menu=Menu(root)
 # menubar2.add_cascade(label="file",menu=menubar2more)
 # menu.add_cascade(label='Test', menu=menubar2)
 
-def open(): Label(root,text='you open a file').pack()
-def save(): Label(root,text='the file has been saved').pack()
-def exit():
-    print('exit')
-    root.destroy()
+# def open(event): Label(root,text='you open a file').pack()
+# def save(event): Label(root,text='the file has been saved').pack()
+# def exit(event):
+#     print('exit')
+#     root.destroy()
+
+def open(event=None): menubar2.entryconfig('Start',state='normal')
+def save(event=None): Label(root,text='the file has been saved').pack()
+def start(event=None): menubar1.entryconfig('Save',state='normal')
 
 menubar1=Menu(menu,tearoff=0)
 
-#子選單項目
-menubar1.add_command(label="Open",command=open)
-menubar1.add_command(label="Save",command=save)
-menubar1.add_command(label="Exit",command=exit)
+# 主選單項目
+menubar1.add_command(label="Open",command=open,accelerator="Control+o",state='normal')
+menubar1.add_command(label="See",command=save,accelerator="Control+s",state='disabled')
+menubar1.add_command(label="Exit",command=exit,accelerator="Control+e")
+
+root.bind_all("<Control-o>",open)
+root.bind_all("<Control-s>",save)
+root.bind_all("<Control-e>",exit)
+
+menubar2=Menu(menu,tearoff=0)
+
+menubar2.add_command(label="Start",state='disabled',command=start)
+menubar2.add_command(label="End")
 
 #建立主選單，內容為子選單
 menu.add_cascade(label="file",menu=menubar1)
+menu.add_cascade(label="second",menu=menubar2)
 
 # #主視窗加入主選單
 root.config(menu=menu)

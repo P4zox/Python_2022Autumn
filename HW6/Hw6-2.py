@@ -9,7 +9,6 @@ menubar2=Menu(menu,tearoff=0)
 menubar1.add_command(label='aaa')
 menubar1.add_command(label='bbb')
 
-
 def close():
     root.destroy()
 
