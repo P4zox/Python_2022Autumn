@@ -6,6 +6,20 @@ root.title("HW5-3")
 from PIL import Image, ImageTk
 sum=0
 a=0
+def blue():
+    selectlabel['fg']='Black'
+    selectlabel['textvariable']=val
+def green():
+    selectlabel['fg']='Gray'
+    selectlabel['textvariable']=val
+def brown():
+    selectlabel['fg']='Brown'
+    selectlabel['textvariable']=val
+val=StringVar()
+radiobtn1=Radiobutton(root,text="Black",variable=val,value='Black',foreground="Black",command=blue)
+radiobtn2=Radiobutton(root,text="Gray",variable=val,value='Gray',foreground="Gray",command=green,state=DISABLED)
+radiobtn3=Radiobutton(root,text="Brown",variable=val,value='Brown',foreground="Brown",command=brown)
+selectlabel=Label(root,textvariable='',font=("Ariel",12))
 def clicker():
 # 方法2
     global a
@@ -48,12 +62,16 @@ tk_img=ImageTk.PhotoImage(resized_image)
 
 
 storename.grid(row=0,column=0,columnspan=4,sticky=W+S+N+E)
-Label(root,image=tk_img).grid(row=1,column=0,columnspan=2)
-productName.grid(row=2,column=0,columnspan=2,sticky=W)
-totalproduct.grid(row=2,column=2,columnspan=2,sticky=W)
-addbutton.grid(row=3,column=2,sticky=W)
-productNum.grid(row=3,column=3,sticky=W+E+S+N)
-minusbutton.grid(row=3,column=4,sticky=W)
+Label(root,image=tk_img).grid(row=1,column=0,columnspan=2,rowspan=3)
+radiobtn1.grid(row=1,column=2,sticky=W+S+E+N)
+radiobtn2.grid(row=2,column=2,sticky=W+S+E+N)
+radiobtn3.grid(row=3,column=2,sticky=W+S+E+N)
+productName.grid(row=4,column=0,columnspan=2,sticky=W)
+selectlabel.grid(row=4,column=2,columnspan=2,sticky=W)
+totalproduct.grid(row=4,column=3,columnspan=2,sticky=W)
+addbutton.grid(row=5,column=2,sticky=W)
+productNum.grid(row=5,column=3,sticky=W+E+S+N)
+minusbutton.grid(row=5,column=4,sticky=W)
 
 
 
