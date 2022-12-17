@@ -93,6 +93,15 @@ Product_add_button4.grid(row=4,column=7,sticky=E)
 root.rowconfigure(5,weight=2)
 Detail_list_button=Button(root,text="詳細清單",font=("Inter",10),fg="Black",bg="#F8DCDC")
 Detail_list_button.grid(row=5,column=0,sticky=W+S,padx=5,pady=1)
+Shoppy_img=Image.open('C:/Users/halst/Downloads/image/image/Shopping Cart.png')
+Shoppy_img=Shoppy_img.resize((30,30))
+Shoppy_img=ImageTk.PhotoImage(Shoppy_img)
+Shoppy_label=Label(root,image=Shoppy_img)
+Shoppy_label.grid(row=5,column=4,padx=5,sticky=E+S,pady=1)
+Shoppy_price=Label(root,text="供消費:0元",font=("Inter",10),fg="Black")
+Shoppy_price.grid(row=5,column=5,columnspan=2,sticky=W+S,padx=5,pady=1)
+Pay_button=Button(root,text="結帳",font=("Inter",10),fg="Black",bg="#F8DCDC")
+Pay_button.grid(row=5,column=7,sticky=E+S,padx=5,pady=1)
 
 
 
